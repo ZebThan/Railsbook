@@ -9,6 +9,13 @@ class UsersController < ApplicationController
   end
 
   def show
+
+
+    if user_signed_in? do
+    render 'home/warning'
+    end
+    end
+
     @pictures = @user.pictures.all
     @commentable = @user
     @comments = @user.comments

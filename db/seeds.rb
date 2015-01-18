@@ -6,4 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(name: 'test_user', email: 'test@example.pl', age: 69)
+u = User.create(name: 'Testuser', email: 'test@example.pl', admin: true, about: 'reczny testowy', age: 15, password: 'adminadmin', password_confirmation: 'adminadmin')
+5.times do
+	u = User.create(name: Faker::Name.name, email: Faker::Internet.email, about:Faker::Lorem.sentence, age: Faker::Number.number(2), password: 'adminadmin', password_confirmation: 'adminadmin')
+ 	puts "User zrobiono"
+end

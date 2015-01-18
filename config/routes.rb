@@ -11,7 +11,7 @@ Rails.application.routes.draw do
  end
 
 
-
+  get 'home/warning'
   get 'home/index'
   root 'home#index'
 

@@ -13,10 +13,9 @@ def create
   @comment = @commentable.comments.new(comment_params)
   @comment.author_id = current_user.id
   @comment.save
-  respond_to do |format|
-  format.html
-  format.js
-  end
+  @comments = @commentable.comments.all
+
+  #respond_with(@commentable)
 
 end
 

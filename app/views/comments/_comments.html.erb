@@ -1,3 +1,6 @@
-<% @comments.each do |comment| %>
-    <p><%= comment.author.name %> says <%= comment.content  %></p>
+<div id='comments'>
+<% @comments.reverse_each do |comment| %>
+
+   <%= render partial: "comments/comment", locals: {c: comment} %>
     <%end%>
+</div>

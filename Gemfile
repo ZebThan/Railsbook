@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'faker'
 gem 'paperclip'
 gem 'rails_admin'
 gem 'devise'

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
 before_action :load_commentable
 
-respond_to :html
+respond_to :html, :js
 
 def new
    @comment = @commentable.comments.new
@@ -13,9 +13,11 @@ def create
   @comment = @commentable.comments.new(comment_params)
   @comment.author_id = current_user.id
   @comment.save
-  redirect_to @commentable
+  respond_to do |format|
+  format.html
+  format.js
+  end
 
-  #respond_with(@commentable)
 end
 
 def show

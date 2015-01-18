@@ -1,0 +1,14 @@
+<%= form_for [@commentable,@comment] do |f| %>
+<%if user_signed_in? %>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+   
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <%else%>
+  <strong> Please log in to add comments</strong>
+  <%end%>
+  <%end%>

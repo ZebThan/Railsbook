@@ -1,0 +1,6 @@
+<%= image_tag @picture.image %>
+<%= link_to "Back to " + @picture.user.name, users_path %>
+
+<%= render "comments/new" %>
+
+<%= render "comments/comments" %>

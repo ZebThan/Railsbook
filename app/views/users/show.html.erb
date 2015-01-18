@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+ <td><%= image_tag @user.avatar(:medium) %></td>   
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @user.about %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @user.sex %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<% if current_user == @user %> <%= link_to 'Add picture', new_user_picture_path(:user_id) %> <%end%>
+
+<% if (current_user.pictures.size > 5 || current_user == @user) %>
+ <% @user.pictures.each do |picture| %>
+    <p><%= link_to (image_tag picture.image(:medium)), picture_path(picture.id) %></p>
+    <%end%>
+    <%end%>
+<%= render "comments/new" %>
+
+<%= render "comments/comments" %>
+
+

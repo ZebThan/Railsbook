@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  about: MyText
+  age: 9.99
+  sex: false
+  progress: 9.99
+
+two:
+  name: MyString
+  about: MyText
+  age: 9.99
+  sex: false
+  progress: 9.99

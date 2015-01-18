@@ -11,8 +11,10 @@ end
 
 def create
   @comment = @commentable.comments.new(comment_params)
+  @comment.author_id = current_user.id
   @comment.save
   redirect_to @commentable
+
   #respond_with(@commentable)
 end
 

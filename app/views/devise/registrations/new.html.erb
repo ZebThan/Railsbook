@@ -23,8 +23,11 @@
     <%= f.text_field :age %>
   </div>
   <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.check_box :sex %>
+
+<%= f.radio_button :sex, true %>
+<%= label :sex, 'Male' %><br>
+<%= f.radio_button :sex, false %>
+<%= label :sex, 'Female' %><br>
   </div>
 
   <div class="field">

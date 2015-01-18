@@ -18,7 +18,9 @@
 
 <p>
   <strong>Sex:</strong>
-  <%= @user.sex %>
+  <% if @user.sex %> Male
+  <% else %> Female
+  <%end%>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

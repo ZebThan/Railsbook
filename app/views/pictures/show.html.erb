@@ -1,4 +1,4 @@
-<%= image_tag @picture.image %>
+<%= image_tag @picture.image(:show) %><br>
 <%= link_to "Back to " + @picture.user.name, @picture.user %>
 
 <%= render "comments/new" %>

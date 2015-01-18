@@ -1,2 +1,2 @@
-$('#new_comment').append('<%= j render partial:"comments/comment", locals: {c: @comment}%>');
+$('#comments').prepend('<%= j render partial:"comments/comment", locals: {c: @comment}%>');
 $('#comment_content').val('');

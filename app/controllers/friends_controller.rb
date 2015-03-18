@@ -3,7 +3,8 @@ class FriendsController < ApplicationController
 before_action :set_user, only: [:index, :new]
 respond_to :html, :js
 	def index
-		@users = @user.friends.all # @users = @friends
+		@friendship_ids = Friendship.where(friend_id: @user.id).pluck(:user_id)
+		@users = @user.friends.where(id: @friendship_ids) # @users = @friends
 		render 'users/index'
 	end
 

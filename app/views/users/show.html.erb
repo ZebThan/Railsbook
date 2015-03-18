@@ -24,6 +24,9 @@
 </p>
 
 <%= link_to 'Friends', user_friends_path(@user) %>
+<div id="Adding_to_friends"><%if (signed_in? && !current_user.friends.exists?(@user.id) && current_user != @user ) %> <%= link_to 'Add this user to friends', new_user_friend_path(@user), remote:true %>
+<%end%></div>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <% if current_user == @user %> <%= link_to 'Add picture', new_user_picture_path(:user_id) %> <%end%>

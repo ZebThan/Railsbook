@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     if user_signed_in? do
     render 'home/warning'
-    end
+     end
     end
 
     @pictures = @user.pictures.all

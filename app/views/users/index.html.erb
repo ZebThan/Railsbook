@@ -1,27 +1,18 @@
-<p id="notice"><%= notice %></p>
-           <div class="pull-right login-links">
-            <% if user_signed_in? %>
-                <%= link_to current_user.email, edit_user_registration_path, :title => "Edit Profile" %>
-                <%= link_to "Log off", destroy_user_session_path, :method => :delete, :class => "label label-important" %>
-            <% else %>
-                <%= link_to "Log in", new_user_session_path, :method => :get %> |
-                <%= link_to "Register", new_user_registration_path, :method => :get %>
-            <% end %>
-
 <h1>Listing Users</h1>
 
-<table>
-<% a = 0 %>
-  <% @users.each do |user| %>
-       <td> <%= link_to (image_tag user.avatar(:thumb)), user%><br>
-        <%= user.name %></td>
-        <% a=a+1 %>
-        <% if a>9%> 
-        <tr>
-        <% a = 0 %>
-        <%end%>
-   <% end %>
-  </body>
-</table>
+<table class="table table-striped">
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to (image_tag user.avatar(:thumb)), user_path(user) %></td>
+        <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= %></td>
+        <td><%= %></td>
+        <td><%= %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</body>
 
 <br>

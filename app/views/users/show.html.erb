@@ -25,7 +25,7 @@
 
 <%= link_to 'Friends', user_friends_path(@user) %>  <div id="Adding_to_friends"><%if (signed_in? && !current_user.friends.exists?(@user.id) && current_user != @user ) %> <%= link_to 'Add this user to friends', new_user_friend_path(@user), remote:true %><%end%></div>
 
-<% if current_user == @user %> <%= link_to 'Add picture', new_user_picture_path(:user_id) %> <%end%>
+<div id="Adding_picture"><% if current_user == @user %> <%= link_to 'Add picture', new_user_picture_path(:user_id), remote:true %> <%end%></div>
 <%if signed_in?%>
 <% if (current_user.pictures.size > 5 || current_user == @user) %>
  <% @user.pictures.each do |picture| %>

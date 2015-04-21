@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :pictures
@@ -6,10 +6,7 @@ class User < ActiveRecord::Base
 
 
   has_many :friendships
- #has_many :friendships, :foreign_key => "friend_id"
   has_many :friends, :class_name => "User", :through => :friendships
- #has_many :users, :foreign_key => "friend_id", :through => :friendships
-
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

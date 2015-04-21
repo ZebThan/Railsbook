@@ -2,7 +2,7 @@ class PicturesController < ApplicationController
 
 before_action :load_user, only: [:create, :new]
 before_action :set_picture, only: [:show]
-respond_to :html
+respond_to :html, :js
 
 def new
 	@picture = @user.pictures.new

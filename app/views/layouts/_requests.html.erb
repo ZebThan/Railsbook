@@ -1,0 +1,5 @@
+<div id= "Adding_to_friends_sidebar"><% Friendship.requests(current_user.id).each do |request| %> 
+<%unless Friendship.requests(request.user_id).where(user_id: current_user.id).exists? %><%= link_to User.find(request.user_id).name, user_path(User.find(request.user_id))  %> <%= link_to "Add this user", new_user_friend_path(User.find(request.user_id)), remote:true %><br><br>
+<%end%>
+<%end%>
+</div>

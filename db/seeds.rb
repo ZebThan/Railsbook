@@ -10,4 +10,12 @@ u = User.create(name: 'Testuser', email: 'test@example.pl', admin: true, about: 
 50.times do
 	u = User.create(name: Faker::Name.name, email: Faker::Internet.email, about:Faker::Lorem.sentence, age: Faker::Number.number(2), password: 'adminadmin', password_confirmation: 'adminadmin')
  	puts "User zrobiono"
-end
+ end
+
+n = 2
+#20.times do
+#	f = Friendship.create(user_id: n, friend_id: 1 )
+#	n = n + 1
+#end
+
+
